@@ -1,32 +1,36 @@
-"""
-    모험가 길드
-"""
+# 모험가 길드
 
 # 내 풀이
 n = int(input())
-l = list(map(int, input().split()))
-l.sort(reverse=True)
-idx = 0
-result = 0
+adventurers = list(map(int, input().split()))
+adventurers.sort()
 
-while idx < n:
-    if idx + l[idx] - 1 >= n:
-        idx += 1
-        continue
-    idx += l[idx]
-    result += 1
+i = 0
+j = 0
+
+result = 0
+while j < len(adventurers):
+    if adventurers[j] == j - i + 1:
+        result += 1
+        i = j + 1
+        j = i
+    else:
+        j += 1
 
 print(result)
 
-# 답
-l.sort()
-result = 0  # 총 그룹의 수
-count = 0  # 현재 그룹에 포함된 모험가의 수
+# 모범 답안
+n = int(input())
+adventurers = list(map(int, input().split()))
+adventurers.sort()
 
-for i in l:  # 공포도를 낮은 것부터 하나씩 확인하며
-    count += 1  # 현재 그룹에 해당 모험가를 포함시키기
-    if count >= i:  # 현재 그룹에 포함된 모험가의 수가 현재의 공포도 이상이라면, 그룹 결성
-        result += 1  # 총 그룹의 수 증가시키기
-        count = 0  # 현재 그룹에 포함된 모험가의 수 초기화
+count = 0
+result = 0
 
-print(result)  # 총 그룹의 수 출력
+for i in adventurers:
+    count += 1
+    if count >= i:
+        result += 1
+        count = 0
+
+print(result)
