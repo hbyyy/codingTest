@@ -1,6 +1,6 @@
 .python-version
-
-
+./line_test
+./notebook
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm+all,vscode,visualstudiocode,macos,linux,windows,venv,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm+all,vscode,visualstudiocode,macos,linux,windows,venv,git
 
@@ -208,3 +208,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all,vscode,visualstudiocode,macos,linux,windows,venv,git
+/line_test/
+/notebook/
