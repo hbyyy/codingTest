@@ -46,4 +46,4 @@ def solution2(s):
     return min(result, default=1)
 
 
-# 모범 답
+solution2("abcabcdede")
