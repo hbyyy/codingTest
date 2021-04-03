@@ -30,19 +30,20 @@ for _ in range(N):
 
 def dfs(v):
     x, y = v
-    if arr[x][y] == 0:
-        arr[x][y] = 1
-        for nx, ny in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
-            dx, dy = x + nx, y + ny
-            if 0 <= dx < N and 0 <= dy < M:
-                dfs((dx, dy))
+    arr[x][y] = 1
+    for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+        nx = x + dx
+        ny = y + dy
 
+        if 0 <= nx < N and 0 <= ny < M:
+            if arr[nx][ny] == 0:
+                dfs((nx, ny))
 
 result = 0
 for i in range(N):
     for j in range(M):
         if arr[i][j] == 0:
-            dfs((i, j))
             result += 1
+            dfs((i, j))
 
 print(result)
