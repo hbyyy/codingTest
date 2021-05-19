@@ -53,7 +53,7 @@ class Solution:
 
         while heap:
             val, idx, node = heapq.heappop(heap)
-            tail.next = ListNode(val)
+            tail.next = node
             tail = tail.next
 
             if node.next:
