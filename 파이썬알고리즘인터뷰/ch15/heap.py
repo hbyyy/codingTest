@@ -46,8 +46,6 @@ class BinaryHeap:
             idx = smallest
             left, right = idx * 2, idx * 2 + 1
 
-
-
     def insert(self, k):
         self.items.append(k)
         self._percolate_up()
