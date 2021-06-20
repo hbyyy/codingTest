@@ -22,3 +22,7 @@ class Solution:
             stack.append(i)
 
         return answer
+
+
+s = Solution()
+s.dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])

@@ -26,3 +26,5 @@ class Solution:
                     result += 1
                 s.pop()
         return result
+
+
