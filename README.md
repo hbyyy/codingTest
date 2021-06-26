@@ -8,7 +8,7 @@
 
 ### 진행 중
 
-- Fluent Python 책 [링크](./파이썬/fluent-Python/notebook))
+- Fluent Python 책 ([링크](./파이썬/fluent-Python/notebook))
   - 5장까지 완료
 
 ### 완료
