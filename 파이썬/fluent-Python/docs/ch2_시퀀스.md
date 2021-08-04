@@ -90,6 +90,10 @@ for n1, n2, n3, (c1, c2) in tmp_tuple:
 
 - 메서드 없는 클래스라고 생각할 수 있다
 - 튜플의 레코드로써의 기능을 확장해 사용할 수 있다 (필드명 지정 가능)
+- pydantic package
+    - 파이썬 데이터 타입 설정, validation 을 위한 패키지
+    - 좀 더 강력한 타입지정이 필요하다면, 이 패키지를 이용하면 좋다
+    - [pydantic](https://pydantic-docs.helpmanual.io/)
 
 ```python
 # 2번째 인자는 필드값인데, 반복형 값이나 공백으로 구분된 하나의 문자열을 사용한다
