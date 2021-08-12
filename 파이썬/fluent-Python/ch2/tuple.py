@@ -27,3 +27,35 @@ a, b, *rest = range(3)  # 0, 1, [2]
 a, b, *rest = range(2)  # 0, 1, []
 a, *rest, b, c = range(6)  # 0, [1, 2, 3], 4, 5
 a, *rest, b = range(2)  # 0, [], 1
+
+
+# 내포된 튜플 언패킹
+
+metro_areas = [
+    ("Tokyo", "JP", 36.933, (35.689722, 139.691667)),
+    ("Delhi NCR", "IN", 21.935, (28.689722, 77.691667)),
+]
+
+print("{:15} | {:^9} | {:^9}".format("", "lat", "long"))
+fmt = "{:15} | {:^9} | {:^9}"
+
+for name, cc, pop, (lat, long) in metro_areas:
+    print(fmt.format(name, lat, long))
+
+
+from collections import namedtuple
+
+
+City = namedtuple('City', 'name country population coordinates')
+tokyo = City('Tokyo', 'JP', 36.933, (35.132314, 139.1312314))
+print(tokyo)
+print(tokyo[0], tokyo[1])
+
+print(City._fields)
+LatLong = namedtuple('LatLong', 'lat long')
+delhi_data = ('Delhi_NCR', 'IN', 21.935, LatLong(28.61231, 77.243242))
+delhi = City._make(delhi_data)
+print(delhi)
+print(delhi._asdict())
+
+print(set(list.__dict__) - set(tuple.__dict__))
